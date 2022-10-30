@@ -1,28 +1,34 @@
 from director import Director
+from utils import draw_text
 from scene import Scene
+from config import FONT, TEXT_COL
+from botones import Button
 import pygame
 
+start_img = pygame.image.load("btns/btn_jugar.png").convert_alpha()
+help_img = pygame.image.load("btns/btn_ayuda.png").convert_alpha()
+configuration_img = pygame.image.load("btns/btn_configuracion.png").convert_alpha()
+
+start_btn = Button(100, 200, start_img)
+help_btn = Button(450, 200, help_img)
+configuration_btn = Button(304, 125, configuration_img)
 
 class HomeScene(Scene):
     """ Welcome screen of the game, the first one to be loaded."""
 
     def __init__(self, director: Director):
         Scene.__init__(self, director)
-        # aca se declaran todos los botones, se pueden añadir a un grupo
-        # para manejarlos mas facil
-        # tambien el resto de elementos que solo hay que dibujar
 
     def on_update(self):
-        # aca actualizar el hover de los botones
         pass
 
     def on_event(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN:
-            # si hay un click entonces mirar si el click fue dentro del
-            # boton, si si fue dentro del boton entonces llamar la funcion
-            # que tiene que hacer ese boton
             pass
-
+    
     def on_draw(self, screen):
-        # se dibujan todos los elementos puede ser usando los grupos
-        screen.fill((255, 255, 255))
+        screen.fill((51, 255, 255))
+        draw_text("Press SPACE to pause.", FONT, TEXT_COL, 160, 250)
+        start_btn.draw_button(screen)
+        help_btn.draw_button(screen)
+        configuration_btn.draw_button(screen)
