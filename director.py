@@ -34,8 +34,8 @@ class Director:
                     if event.key == pygame.K_ESCAPE:
                         self.quit()
 
-            # Detect events
-            self.scene.on_event()
+                # Detect events
+                self.scene.on_event(event)
 
             # Update scene
             self.scene.on_update()
