@@ -2,6 +2,7 @@ import pygame
 import sys
 
 from scene import Scene
+from config import TITLE
 
 
 class Director:
@@ -13,8 +14,8 @@ class Director:
     This object must be used with Scene objects that are defined later."""
 
     def __init__(self):
-        self.screen = pygame.display.set_mode((640, 480))
-        pygame.display.set_caption("Game Name")
+        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+        pygame.display.set_caption(TITLE)
         self.scene: Scene = None
         self.quit_flag = False
         self.clock = pygame.time.Clock()
@@ -42,6 +43,9 @@ class Director:
             # Draw the screen
             self.scene.on_draw(self.screen)
             pygame.display.flip()
+
+        pygame.quit()
+        sys.exit()
 
     def change_scene(self, scene: Scene):
         "Changes the current scene."
