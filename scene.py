@@ -1,4 +1,8 @@
+from typing import TYPE_CHECKING
 import pygame
+
+if TYPE_CHECKING:
+    from director import Director
 
 
 class Scene:
@@ -8,7 +12,7 @@ class Scene:
     in order to be used afterwards as menus, introduction screens,
     etc."""
 
-    def __init__(self, director):
+    def __init__(self, director: "Director"):
         self.director = director
 
     def on_update(self):

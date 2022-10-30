@@ -20,10 +20,6 @@ class Director:
         self.scene: Scene = None
         self.quit_flag = False
         self.clock = pygame.time.Clock()
-    
-    def draw_text(self, text, font, text_col, x, y):
-        img = self.font.render(text, True, text_col)
-        self.screen.blit(img, (x, y))
 
     def loop(self):
         "Main game loop."
@@ -48,8 +44,6 @@ class Director:
             # Draw the screen
             self.scene.on_draw(self.screen)
             pygame.display.flip()
-            
-            self.draw_text("Press SPACE to pause.", FONT, TEXT_COL, 160, 250)
 
         pygame.quit()
         sys.exit()
