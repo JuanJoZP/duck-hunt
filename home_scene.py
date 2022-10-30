@@ -8,15 +8,6 @@ from buttons import Button
 
 from scenes.game_scene import GameScene
 
-start_img = pygame.image.load("btns/btn_jugar.png").convert_alpha()
-help_img = pygame.image.load("btns/btn_ayuda.png").convert_alpha()
-configuration_img = pygame.image.load(
-    "btns/btn_configuracion.png").convert_alpha()
-
-start_btn = Button(100, 200, start_img)
-help_btn = Button(450, 200, help_img)
-configuration_btn = Button(304, 125, configuration_img)
-
 
 class HomeScene(Scene):
     """ Welcome screen of the game, the first one to be loaded."""
