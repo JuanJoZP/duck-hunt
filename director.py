@@ -1,7 +1,7 @@
 import pygame
 import sys
 
-from scene import Scene
+from scenes.scene import Scene
 from config import TITLE, ICON, TEXT_COL, FONT
 
 

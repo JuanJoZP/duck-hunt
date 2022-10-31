@@ -1,5 +1,5 @@
 from director import Director
-from scene import Scene
+from scenes.scene import Scene
 import pygame
 
 

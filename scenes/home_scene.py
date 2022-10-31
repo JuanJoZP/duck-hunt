@@ -2,7 +2,7 @@ import pygame
 from director import Director
 from utils import draw_text
 from utils import draw_text
-from scene import Scene
+from scenes.scene import Scene
 from config import FONT, TEXT_COL
 from buttons import Button
 
