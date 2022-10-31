@@ -2,7 +2,7 @@ import pygame
 import sys
 
 from scenes.scene import Scene
-from config import TITLE, ICON, TEXT_COL, FONT
+from config import TITLE, ICON, TEXT_COL, FONT, SCREEN_SIZE
 
 
 class Director:
@@ -13,6 +13,7 @@ class Director:
 
     def __init__(self):
         self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+        SCREEN_SIZE.setSize(self.screen.get_size())
         pygame.display.set_caption(TITLE)
         pygame.display.set_icon(ICON)
         self.text_col = TEXT_COL

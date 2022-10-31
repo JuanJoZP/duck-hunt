@@ -1,6 +1,6 @@
 from director import Director
 from scenes.scene import Scene
-import pygame
+from elements.background import Background
 
 
 class GameScene(Scene):
@@ -8,9 +8,7 @@ class GameScene(Scene):
 
     def __init__(self, director: Director):
         Scene.__init__(self, director)
-        # aca se declaran todos los botones, se pueden añadir a un grupo
-        # para manejarlos mas facil
-        # tambien el resto de elementos que solo hay que dibujar
+        self.bg = Background(self, "trees.png", 0, 0, 1)
 
     def on_update(self):
         # aca actualizar el hover de los botones
@@ -20,6 +18,7 @@ class GameScene(Scene):
         pass
 
     def on_draw(self, screen):
-        # se dibujan todos los elementos puede ser usando los grupos
         screen.fill((255, 255, 255))
+        self.bg.on_draw(screen)
+
         pass

@@ -1,16 +1,14 @@
 import pygame
+
 from typing import Callable
+from elements.element import Element
+from scenes.scene import Scene
 
 
-class Button():
-    def __init__(self, x: int, y: int, image: pygame.Surface, func: Callable[[None], None]):
-        self.image = image
+class Button(Element):
+    def __init__(self, scene: Scene, image: str, x: int, y: int, zoom: int, func: Callable[[None], None]) -> None:
         self.func = func
-        self.rect = self.image.get_rect()
-        self.rect.topleft = (x, y)
-
-    def draw_button(self, screen):
-        screen.blit(self.image, (self.rect.x, self.rect.y))
+        super().__init__(scene, image, x, y, zoom)
 
     def action(self):
         self.func()

@@ -14,12 +14,12 @@ class HomeScene(Scene):
 
     def __init__(self, director: Director):
         Scene.__init__(self, director)
-        start_btn = Button(750, 600,  pygame.image.load(
-            "img/jugar_btn.png").convert_alpha(), lambda: self.director.change_scene(GameScene(director)))
-        help_btn = Button(750, 800, pygame.image.load(
-            "img/ayuda_btn.png").convert_alpha(), lambda: print("Help"))
-        config_btn = Button(750, 700, pygame.image.load(
-            "img/configuracion_btn.png").convert_alpha(), lambda: print("Config"))
+        start_btn = Button(self, "jugar_btn.png", 750, 600, 0.2,
+                           lambda: self.director.change_scene(GameScene(director)))
+        help_btn = Button(self, "ayuda_btn.png", 750,
+                          800, 0.2, lambda: print("Help"))
+        config_btn = Button(self, "config_btn.png", 750, 700, 0.2,
+                            lambda: print("Config"))
         self.buttons = [start_btn, help_btn, config_btn]
 
     def on_update(self):
@@ -36,4 +36,4 @@ class HomeScene(Scene):
         draw_text("Main Menu", FONT, TEXT_COL, 750, 250, screen)
 
         for button in self.buttons:
-            button.draw_button(screen)
+            button.on_draw(screen)
