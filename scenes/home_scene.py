@@ -15,7 +15,7 @@ class HomeScene(Scene):
     def __init__(self, director: Director):
         Scene.__init__(self, director)
         start_btn = Button(750, 600,  pygame.image.load(
-            "img/jugar_btn.png").convert_alpha(), lambda: self.director.change_scene(GameScene(dir)))
+            "img/jugar_btn.png").convert_alpha(), lambda: self.director.change_scene(GameScene(director)))
         help_btn = Button(750, 800, pygame.image.load(
             "img/ayuda_btn.png").convert_alpha(), lambda: print("Help"))
         config_btn = Button(750, 700, pygame.image.load(

@@ -1,6 +1,6 @@
 import pygame
 from director import Director
-from home_scene import HomeScene
+from scenes.home_scene import HomeScene
 
 
 def main():
