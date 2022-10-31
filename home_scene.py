@@ -22,6 +22,8 @@ class HomeScene(Scene):
             "img/configuracion_btn.png").convert_alpha(), lambda: print("Config"))
         self.buttons = [start_btn, help_btn, config_btn]
 
+"oe"
+
     def on_update(self):
         pass
 
