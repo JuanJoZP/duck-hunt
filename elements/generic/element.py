@@ -1,18 +1,21 @@
 import pygame
 
-from utils import scale_image
+from utils import scale_image, relative_pos
 from scenes.scene import Scene
 
 
 class Element:
-    def __init__(self, scene: Scene, image: str, x: int, y: int, zoom: int) -> None:
+    def __init__(self, scene: Scene, image: str, x: int, y: int, center=False) -> None:
         pygame.sprite.Sprite.__init__(self)
 
         self.scene = scene
         self.image = scale_image(pygame.image.load(
-            f"img/{image}").convert_alpha(), zoom)
+            f"img/{image}").convert_alpha())
         self.rect = self.image.get_rect()
-        self.rect.topleft = (x, y)
+        if center:
+            self.rect.center = relative_pos(x, y)
+        else:
+            self.rect.topleft = relative_pos(x, y)
 
     def on_update() -> None:
         "Called from the scene and defined on the subclass."
