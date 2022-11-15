@@ -31,7 +31,6 @@ class Duck(Element):
             self.move_vel()
 
     def on_draw(self, screen: pygame.Surface):
-        print("moveee")
         super().on_draw(screen)
 
     def move_vel(self):
@@ -41,8 +40,7 @@ class Duck(Element):
         y = -self.velocity * sin(radians(self.angle))
 
         new_pos = relative_pos(x, y)
-        new_pos = (new_pos[0] + self.rect.topleft[0],
-                   new_pos[1] + self.rect.topleft[1])
+        new_pos = (new_pos[0] + self.rect.topleft[0], new_pos[1] + self.rect.topleft[1])
         self.rect.topleft = new_pos
 
     def move_fall():
