@@ -7,6 +7,7 @@ FONT = pygame.font.Font('font/SummerPixel.ttf', 100)
 TEXT_COL = (255, 255, 255)
 BASE_RES = 720
 MAX_DUCK_SPAWN = (BASE_RES*16/9, BASE_RES*0.8)
+DIST = 35
 
 
 class screenSize:

@@ -21,3 +21,11 @@ def scale_image(image: pygame.Surface) -> pygame.Surface:
     x = image.get_rect().width
     y = image.get_rect().height
     return pygame.transform.scale(image, (x * proportion, y*proportion))
+
+
+def cm_to_pixels(cm: int):
+    return cm * 720 / 19.5
+
+
+def pixel_to_cm(pixel: int):
+    return pixel * 19.5 / 720

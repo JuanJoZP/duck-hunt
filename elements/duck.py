@@ -19,7 +19,8 @@ class Duck(Element):
         self.leave = False
         self.fall = False
 
-        self.angle = radians(30)  # 0 a 360 pero en radianes, inicializarlo random
+        # 0 a 360 pero en radianes, inicializarlo random
+        self.angle = radians(30)
         self.velocity = vel
 
     def on_update(self) -> None:
@@ -52,13 +53,18 @@ class Duck(Element):
         y = -self.velocity * sin(self.angle)
 
         new_pos = relative_pos(x, y)
-        new_pos = (new_pos[0] + self.rect.topleft[0], new_pos[1] + self.rect.topleft[1])
+        new_pos = (new_pos[0] + self.rect.topleft[0],
+                   new_pos[1] + self.rect.topleft[1])
         self.rect.topleft = new_pos
-        print(self.angle)
 
-    def move_fall():
-        # animacion cuando le disparan
-        pass
+    def move_fall(self):
+        x = 0
+        y = self.velocity
+
+        new_pos = relative_pos(x, y)
+        new_pos = (new_pos[0] + self.rect.topleft[0],
+                   new_pos[1] + self.rect.topleft[1])
+        self.rect.topleft = new_pos
 
     def move_leave():
         # animacion cuando se va
@@ -67,9 +73,10 @@ class Duck(Element):
     def on_draw(self, screen: pygame.Surface):
         super().on_draw(screen)
 
-    def in_sight(x, y) -> bool:
-        # true si x y esta dentro de el pato
-        pass
+    def shoot(self, x, y) -> bool:
+        if x >= self.rect.left and x <= self.rect.right:
+            if y >= self.rect.top and y <= self.rect.bottom:
+                self.fall = True
 
     def kill(self) -> None:
         del self
