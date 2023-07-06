@@ -1,7 +1,7 @@
 # Duck-hunt
 Implementacion de una version simplificada del clasico juego [duck hunt](https://es.wikipedia.org/wiki/Duck_Hunt).
 
-Para este proyecto emulamos la pistola de luz que se usa originalmente con un giroscopio y un pulsador conectados a un Arduino 
+Para este proyecto emulamos la pistola de luz que se usa originalmente con un giroscopio (MPU6050) y un pulsador conectados a un Arduino 
 
 
 # Instalacion
